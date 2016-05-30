@@ -1,0 +1,18 @@
+<%= form_for(product) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.collection_select :type_id, Type.all, :id,:name %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
