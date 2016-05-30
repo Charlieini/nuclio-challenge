@@ -6,6 +6,11 @@ class TypesController < ApplicationController
 
   def create
     @type = Type.new type_params
+    if @type.save
+      flash[:notice] = "Type successfully create"
+    else
+      flash[:alert] = "Type not saved"
+    end
     redirect_to products_path
   end
 
